@@ -61,7 +61,7 @@ def replace(head: Node, p1: int, p2: int):
     curr.next = extracted
     return head
 
-def reverse(head: None):
+def reverse(head: Node):
     prev = None
     curr = head
     while curr:
