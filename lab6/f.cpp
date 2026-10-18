@@ -7,24 +7,24 @@
 
 using namespace std;
 
-unordered_map<string, float> gpaTable = {
-    {"A+", 4.00f},
-    {"A", 3.75f},
-    {"B+", 3.50f},
-    {"B", 3.00f},
-    {"C+", 2.50f},
-    {"C", 2.00f},
-    {"D+", 1.50f},
-    {"D", 1.0f},
-    {"F", 0.f}
+unordered_map<string, double> gpaTable = {
+    {"A+", 4.00},
+    {"A", 3.75},
+    {"B+", 3.50},
+    {"B", 3.00},
+    {"C+", 2.50},
+    {"C", 2.00},
+    {"D+", 1.50},
+    {"D", 1.00},
+    {"F", 0.00}
 };
 
 struct Student
 {
     string ln, fn;
-    float gpa;
+    double gpa;
 
-    Student(string& s1, string& s2, float gpa) : ln(s1), fn(s2), gpa(gpa) {}
+    Student(string& s1, string& s2, double gpa) : ln(s1), fn(s2), gpa(gpa) {}
 };
 
 int main()
@@ -41,7 +41,7 @@ int main()
 
         cin >> ln >> fn >> cnt;
 
-        float gpa = 0.0f;
+        double gpa = 0.0;
 
         int sum = 0;
         for (int j = 0; j < cnt; j++)
@@ -57,7 +57,7 @@ int main()
         if (sum)
             gpa /= sum;
         else
-            gpa = 0.0f;
+            gpa = 0;
         students.emplace_back(ln, fn, gpa);
     }
 
